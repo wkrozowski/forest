@@ -10,7 +10,27 @@ Cocartesian Fibrations</h1><a href=/forest/notes/frct-0015/ class=slug>#frct-001
 <a href=/forest/notes/frct-0016/ class=slug>#frct-0016</a></summary><div class=post-content id=content-frct-0016><p>Let $E$ be displayed over $B$, and let $f:x\to y \in B$; a morphism
 $\bar{f}:\bar{x}\to\Sub{f} \bar{y}$ in $E$ is called <em>cocartesian</em> over $f$ when for
 any $m:y\to u$ and $\bar{h}:\bar{x}\to\Sub{f;m} \bar{u}$ there exists a unique
-$\bar{m} : \bar{y}\to\Sub{m} \bar{u}$ with $\bar{f};\bar{m} = \bar{h}$:</p><center>[Missing image: latex/9d02ac0651b2a29b1a69caffbc7ce2ac.svg]</center><p>We use a &ldquo;pushout corner&rdquo; to indicate $\bar{x}\to\bar{y}$ as a cocartesian morphism,
+$\bar{m} : \bar{y}\to\Sub{m} \bar{u}$ with $\bar{f};\bar{m} = \bar{h}$:</p><center><img class=latex src=/forest/latex/9d02ac0651b2a29b1a69caffbc7ce2ac.svg alt="  \begin{tikzpicture}[diagram]
+    \SpliceDiagramSquare{
+      west/style = lies over,
+      east/style = lies over,
+      north/node/style = upright desc,
+      height = 1.5cm,
+      nw = \bar{x},
+      ne = \bar{y},
+      sw = x,
+      north = \bar{f},
+      south = f,
+      se = y,
+      ne/style = ne pullback,
+    }
+    \node (u') [above right = 1.5cm of ne,xshift=.5cm] {$\bar{u}$};
+    \node (u) [above right = 1.5cm of se,xshift=.5cm] {$u$};
+    \draw[lies over] (u') to (u);
+    \draw[->,bend left=30] (nw) to node [sloped,above] {$\bar{h}$} (u');
+    \draw[->] (se) to node [sloped,below] {$m$} (u);
+    \draw[->,exists] (ne) to node [desc] {$\bar{m}$} (u');
+  \end{tikzpicture}"></center><p>We use a &ldquo;pushout corner&rdquo; to indicate $\bar{x}\to\bar{y}$ as a cocartesian morphism,
 a notation justified by <a class=local href=/forest/notes/frct-0019/>the dual self-indexing</a>.</p></div><div id=children-frct-0016></div></details></section><script type=text/javascript>document.addEventListener("DOMContentLoaded",function(){function t(e,t){var n={root:document.documentElement},s=new IntersectionObserver((e,n)=>{for(const s of e)if(s.intersectionRatio>0){t(),n.disconnect();break}},n);s.observe(e)}const n=document.getElementById("details-frct-0017");t(n,()=>{const e=document.getElementById("content-frct-0017");e&&(renderMathInElement(e,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}],throwOnError:!1,macros:{"\\AlgGU":"\\mathbf{GU}_{\\textit{alg}}","\\BoldSymbol":"\\pmb{#1}","\\CandHom":"\\mathbf{H}_{#1}(#2,#3)","\\CartGU":"\\mathbf{GU}_{\\textit{cart}}","\\CoSl":"#2^{\\setminus #1}","\\Cod":"\\mathsf{cod}_{#1}","\\Con":"\\mathsf{#1}","\\DirImg":"#1_{*}","\\FAM":"\\pmb{\\mathcal{F}}_{#1}","\\FullSubfib":"\\mathbf{Full}(#1)","\\GL":"\\pmb{\\mathcal{G}}_{#1}","\\Gl":"\\mathsf{gl}_{#1}","\\Idn":"1_{#1}","\\InvImg":"#1^{*}","\\LogGU":"\\mathbf{GU}_{\\textit{log}}","\\ObjTerm":"\\mathbf{1}_{#1}","\\OpCat":"#1^{\\mathsf{o}}","\\OpGL":"\\overline{\\pmb{\\mathcal{G}}}_{#1}","\\OpGl":"\\overline{\\mathsf{gl}}_{#1}","\\PCartGU":"\\mathbf{GU}_{\\textit{pcart}}","\\SET":"\\mathbf{Set}","\\SelfIx":"\\underline{#1}","\\Sh":"\\pmb{\\mathcal{S}}_{#1}","\\Sl":"#1_{/#2}","\\Sub":"_{#1}","\\Sup":"^{#1}","\\TOP":"\\mathbf{Top}_{#1}","\\TotCat":"\\widetilde{#1}","\\TotOpCat":"#1^{\\tilde{\\mathsf{o}}}","\\brc":"\\{ #1 \\}","\\brk":"[#1]","\\gl":`\\langle #1 \\rangle`,"\\prn":"(#1)","\\tick":"'"}}),hasRendered=!0)});const e=document.getElementById("toggle-children-button-frct-0017");e&&(e.onclick=function(){var e=!1,t=[];t.forEach(t=>e=e||t.hasAttribute("open")),parentDetails=document.getElementById("details-frct-0017"),parentDetails.hasAttribute("open")?t.forEach(t=>e?t.removeAttribute("open"):t.setAttribute("open",!0)):document.getElementById("details-frct-0017").setAttribute("open",!0)})})</script><section class=block><details open id=details-frct-0017><summary><h1>Definition 1.2</h1>(cocartesian fibration)
 <a href=/forest/notes/frct-0017/ class=slug>#frct-0017</a></summary><div class=post-content id=content-frct-0017><p>A displayed category $E$ over $B$ is a <em>cocartesian fibration</em> when for each
 $f : x \to y\in B$ and $\bar{x}\in E\Sub{x}$, there exists a displayed object
@@ -36,7 +56,20 @@ fibration.</p></div><div id=children-frct-002X><script type=text/javascript>docu
 <a href=/forest/notes/frct-0019/ class=slug>#frct-0019</a></summary><div class=post-content id=content-frct-0019><p>Dually to the <a class=local href=/forest/notes/frct-001x/>fundamental self-indexing</a>, every category $B$ can also be displayed over itself via its <em>coslices</em> $\CoSl{x}{B}$.</p></div><div id=children-frct-0019><script type=text/javascript>document.addEventListener("DOMContentLoaded",function(){function t(e,t){var n={root:document.documentElement},s=new IntersectionObserver((e,n)=>{for(const s of e)if(s.intersectionRatio>0){t(),n.disconnect();break}},n);s.observe(e)}const n=document.getElementById("details-frct-002Z");t(n,()=>{const e=document.getElementById("content-frct-002Z");e&&(renderMathInElement(e,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}],throwOnError:!1,macros:{"\\AlgGU":"\\mathbf{GU}_{\\textit{alg}}","\\BoldSymbol":"\\pmb{#1}","\\CandHom":"\\mathbf{H}_{#1}(#2,#3)","\\CartGU":"\\mathbf{GU}_{\\textit{cart}}","\\CoSl":"#2^{\\setminus #1}","\\Cod":"\\mathsf{cod}_{#1}","\\Con":"\\mathsf{#1}","\\DirImg":"#1_{*}","\\FAM":"\\pmb{\\mathcal{F}}_{#1}","\\FullSubfib":"\\mathbf{Full}(#1)","\\GL":"\\pmb{\\mathcal{G}}_{#1}","\\Gl":"\\mathsf{gl}_{#1}","\\Idn":"1_{#1}","\\InvImg":"#1^{*}","\\LogGU":"\\mathbf{GU}_{\\textit{log}}","\\ObjTerm":"\\mathbf{1}_{#1}","\\OpCat":"#1^{\\mathsf{o}}","\\OpGL":"\\overline{\\pmb{\\mathcal{G}}}_{#1}","\\OpGl":"\\overline{\\mathsf{gl}}_{#1}","\\PCartGU":"\\mathbf{GU}_{\\textit{pcart}}","\\SET":"\\mathbf{Set}","\\SelfIx":"\\underline{#1}","\\Sh":"\\pmb{\\mathcal{S}}_{#1}","\\Sl":"#1_{/#2}","\\Sub":"_{#1}","\\Sup":"^{#1}","\\TOP":"\\mathbf{Top}_{#1}","\\TotCat":"\\widetilde{#1}","\\TotOpCat":"#1^{\\tilde{\\mathsf{o}}}","\\brc":"\\{ #1 \\}","\\brk":"[#1]","\\gl":`\\langle #1 \\rangle`,"\\prn":"(#1)","\\tick":"'"}}),hasRendered=!0)});const e=document.getElementById("toggle-children-button-frct-002Z");e&&(e.onclick=function(){var e=!1,t=[];t.forEach(t=>e=e||t.hasAttribute("open")),parentDetails=document.getElementById("details-frct-002Z"),parentDetails.hasAttribute("open")?t.forEach(t=>e?t.removeAttribute("open"):t.setAttribute("open",!0)):document.getElementById("details-frct-002Z").setAttribute("open",!0)})})</script><section class=block><details open id=details-frct-002Z><summary><h1>Construction 1.5.1</h1><a href=/forest/notes/frct-002z/ class=slug>#frct-002Z</a></summary><div class=post-content id=content-frct-002Z><p>Let $B$ be a category. Define the displayed category $\overline{B}$ over $B$ as
 follows:</p><ol><li>For $x\in B$, define $\overline{B}\Sub{x}$ as the collection of pairs
 $(\bar{x}\in B,p\Sub{x}:x\to\bar{x})$.</li><li>For $f : x\to y\in B$, define $\overline{B}\Sub{f}$ to be the collection of
-commuting squares in the following configuration:</li></ol><center>[Missing image: latex/22366d10f637a38031b49ed65cf39631.svg]</center></div><div id=children-frct-002Z></div></details></section><script type=text/javascript>document.addEventListener("DOMContentLoaded",function(){function t(e,t){var n={root:document.documentElement},s=new IntersectionObserver((e,n)=>{for(const s of e)if(s.intersectionRatio>0){t(),n.disconnect();break}},n);s.observe(e)}const n=document.getElementById("details-frct-001M");t(n,()=>{const e=document.getElementById("content-frct-001M");e&&(renderMathInElement(e,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}],throwOnError:!1}),hasRendered=!0)});const e=document.getElementById("toggle-children-button-frct-001M");e&&(e.onclick=function(){var e=!1,t=[];t.forEach(t=>e=e||t.hasAttribute("open")),parentDetails=document.getElementById("details-frct-001M"),parentDetails.hasAttribute("open")?t.forEach(t=>e?t.removeAttribute("open"):t.setAttribute("open",!0)):document.getElementById("details-frct-001M").setAttribute("open",!0)})})</script><section class=block><details open id=details-frct-001M><summary><h1>Exercise 1.5.2</h1><a href=/forest/notes/frct-001m/ class=slug>#frct-001M</a></summary><div class=post-content id=content-frct-001M><p>Prove that $\overline{B}$ is a cocartesian fibration if and only if
+commuting squares in the following configuration:</li></ol><center><img class=latex src=/forest/latex/22366d10f637a38031b49ed65cf39631.svg alt="  \DiagramSquare{
+    height = 1.7cm,
+    sw = \bar{x},
+    se = \bar{y},
+    nw = x,
+    ne = y,
+    west = p\Sub{x},
+    east = p\Sub{y},
+    south = \bar{f},
+    north = f,
+    west/style = {->,exists},
+    east/style = {->,exists},
+    south/style = {->,exists},
+  }"></center></div><div id=children-frct-002Z></div></details></section><script type=text/javascript>document.addEventListener("DOMContentLoaded",function(){function t(e,t){var n={root:document.documentElement},s=new IntersectionObserver((e,n)=>{for(const s of e)if(s.intersectionRatio>0){t(),n.disconnect();break}},n);s.observe(e)}const n=document.getElementById("details-frct-001M");t(n,()=>{const e=document.getElementById("content-frct-001M");e&&(renderMathInElement(e,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}],throwOnError:!1}),hasRendered=!0)});const e=document.getElementById("toggle-children-button-frct-001M");e&&(e.onclick=function(){var e=!1,t=[];t.forEach(t=>e=e||t.hasAttribute("open")),parentDetails=document.getElementById("details-frct-001M"),parentDetails.hasAttribute("open")?t.forEach(t=>e?t.removeAttribute("open"):t.setAttribute("open",!0)):document.getElementById("details-frct-001M").setAttribute("open",!0)})})</script><section class=block><details open id=details-frct-001M><summary><h1>Exercise 1.5.2</h1><a href=/forest/notes/frct-001m/ class=slug>#frct-001M</a></summary><div class=post-content id=content-frct-001M><p>Prove that $\overline{B}$ is a cocartesian fibration if and only if
 $B$ has pushouts.</p></div><div id=children-frct-001M></div></details></section><script type=text/javascript>document.addEventListener("DOMContentLoaded",function(){function t(e,t){var n={root:document.documentElement},s=new IntersectionObserver((e,n)=>{for(const s of e)if(s.intersectionRatio>0){t(),n.disconnect();break}},n);s.observe(e)}const n=document.getElementById("details-frct-001N");t(n,()=>{const e=document.getElementById("content-frct-001N");e&&(renderMathInElement(e,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}],throwOnError:!1,macros:{"\\AlgGU":"\\mathbf{GU}_{\\textit{alg}}","\\BoldSymbol":"\\pmb{#1}","\\CandHom":"\\mathbf{H}_{#1}(#2,#3)","\\CartGU":"\\mathbf{GU}_{\\textit{cart}}","\\CoSl":"#2^{\\setminus #1}","\\Cod":"\\mathsf{cod}_{#1}","\\Con":"\\mathsf{#1}","\\DirImg":"#1_{*}","\\FAM":"\\pmb{\\mathcal{F}}_{#1}","\\FullSubfib":"\\mathbf{Full}(#1)","\\GL":"\\pmb{\\mathcal{G}}_{#1}","\\Gl":"\\mathsf{gl}_{#1}","\\Idn":"1_{#1}","\\InvImg":"#1^{*}","\\LogGU":"\\mathbf{GU}_{\\textit{log}}","\\ObjTerm":"\\mathbf{1}_{#1}","\\OpCat":"#1^{\\mathsf{o}}","\\OpGL":"\\overline{\\pmb{\\mathcal{G}}}_{#1}","\\OpGl":"\\overline{\\mathsf{gl}}_{#1}","\\PCartGU":"\\mathbf{GU}_{\\textit{pcart}}","\\SET":"\\mathbf{Set}","\\SelfIx":"\\underline{#1}","\\Sh":"\\pmb{\\mathcal{S}}_{#1}","\\Sl":"#1_{/#2}","\\Sub":"_{#1}","\\Sup":"^{#1}","\\TOP":"\\mathbf{Top}_{#1}","\\TotCat":"\\widetilde{#1}","\\TotOpCat":"#1^{\\tilde{\\mathsf{o}}}","\\brc":"\\{ #1 \\}","\\brk":"[#1]","\\gl":`\\langle #1 \\rangle`,"\\prn":"(#1)","\\tick":"'"}}),hasRendered=!0)});const e=document.getElementById("toggle-children-button-frct-001N");e&&(e.onclick=function(){var e=!1,t=[];t.forEach(t=>e=e||t.hasAttribute("open")),parentDetails=document.getElementById("details-frct-001N"),parentDetails.hasAttribute("open")?t.forEach(t=>e?t.removeAttribute("open"):t.setAttribute("open",!0)):document.getElementById("details-frct-001N").setAttribute("open",!0)})})</script><section class=block><details open id=details-frct-001N><summary><h1>Exercise 1.5.3</h1><a href=/forest/notes/frct-001n/ class=slug>#frct-001N</a></summary><div class=post-content id=content-frct-001N><p>Prove that the <a class=local href=/forest/notes/frct-000a/>total category</a> of $\overline{B}$ is the
 arrow category $B\Sup{\to}$, and the projection is the <em>domain</em> functor.</p></div><div id=children-frct-001N></div></details></section><script type=text/javascript>document.addEventListener("DOMContentLoaded",function(){function t(e,t){var n={root:document.documentElement},s=new IntersectionObserver((e,n)=>{for(const s of e)if(s.intersectionRatio>0){t(),n.disconnect();break}},n);s.observe(e)}const n=document.getElementById("details-frct-0030");t(n,()=>{const e=document.getElementById("content-frct-0030");e&&(renderMathInElement(e,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}],throwOnError:!1}),hasRendered=!0)});const e=document.getElementById("toggle-children-button-frct-0030");e&&(e.onclick=function(){var e=!1,t=[];t.forEach(t=>e=e||t.hasAttribute("open")),parentDetails=document.getElementById("details-frct-0030"),parentDetails.hasAttribute("open")?t.forEach(t=>e?t.removeAttribute("open"):t.setAttribute("open",!0)):document.getElementById("details-frct-0030").setAttribute("open",!0)})})</script><section class=block><details open id=details-frct-0030><summary><h1>Exercise 1.5.4</h1><a href=/forest/notes/frct-0030/ class=slug>#frct-0030</a></summary><div class=post-content id=content-frct-0030><p>Prove that $\overline{B}$ is a cartesian fibration for any category $B$.</p></div><div id=children-frct-0030></div></details></section></div></details></section></div></details></section><script type=text/javascript>document.addEventListener("DOMContentLoaded",function(){function t(e,t){var n={root:document.documentElement},s=new IntersectionObserver((e,n)=>{for(const s of e)if(s.intersectionRatio>0){t(),n.disconnect();break}},n);s.observe(e)}const n=document.getElementById("details-frct-0013");t(n,()=>{const e=document.getElementById("content-frct-0013");e&&(renderMathInElement(e,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}],throwOnError:!1}),hasRendered=!0)});const e=document.getElementById("toggle-children-button-frct-0013");e&&(e.onclick=function(){var n=!1,e=[],t=document.getElementById("details-frct-001O");t&&e.push(document.getElementById("details-frct-001O")),t=document.getElementById("details-frct-003P"),t&&e.push(document.getElementById("details-frct-003P")),t=document.getElementById("details-frct-001P"),t&&e.push(document.getElementById("details-frct-001P")),e.forEach(e=>n=n||e.hasAttribute("open")),parentDetails=document.getElementById("details-frct-0013"),parentDetails.hasAttribute("open")?e.forEach(e=>n?e.removeAttribute("open"):e.setAttribute("open",!0)):document.getElementById("details-frct-0013").setAttribute("open",!0)})})</script><section class=block><button class=toggle-children-button id=toggle-children-button-frct-0013><svg viewBox="0 0 10 15" width="15"><path d="M1 1h8M1 4h8M1 7h8" stroke="gray" stroke-width="2" stroke-linecap="round"/></svg></button>
 <details open id=details-frct-0013><summary><h1>2.
@@ -49,13 +82,73 @@ a right fibration over $B$, this category is in fact a <em>groupoid</em>.</p></d
 all its vertical maps are isomorphisms.</p><details open class=block><summary><b>Proof.</b></summary><p>Suppose that $E$ is a right fibration over $B$, and fix $b\in B$,
 $\bar{b}\in E\Sub{b}$, and a vertical map $f:\bar{b}\to\Sub{1\Sub{b}} \bar{b}$.
 Using the hypothesis that $f$ is cartesian, it has a unique section
-$g:\bar{b}\to\Sub{1\Sub{b}} \bar{b}$ as follows:</p><center>[Missing image: latex/e5810e646c6a8b83ee424ef569f34784.svg]</center><p>Likewise, because $g$ is cartesian, $f$ is the unique section of $g$; thus $f$ is an
+$g:\bar{b}\to\Sub{1\Sub{b}} \bar{b}$ as follows:</p><center><img class=latex src=/forest/latex/e5810e646c6a8b83ee424ef569f34784.svg alt="  \begin{tikzpicture}[diagram]
+    \SpliceDiagramSquare{
+      west/style = lies over,
+      east/style = lies over,
+      north/node/style = upright desc,
+      height = 1.5cm,
+      nw = \bar{b},
+      ne = \bar{b},
+      north = f,
+      sw = b,
+      se = b,
+      south/style = double,
+      nw/style = pullback,
+    }
+    \node (u') [above left = 1.5cm of nw,xshift=-.5cm] {$\bar{b}$};
+    \node (u) [above left = 1.5cm of sw,xshift=-.5cm] {$b$};
+    \draw[lies over] (u') to (u);
+    \draw[double,bend left=30] (u') to (ne);
+    \draw[double] (u) to (sw);
+    \draw[->,exists] (u') to node [desc] {$g$} (nw);
+  \end{tikzpicture}"></center><p>Likewise, because $g$ is cartesian, $f$ is the unique section of $g$; thus $f$ is an
 isomorphism in $E\Sub{b}$.</p><p>Conversely, suppose that $E$ is a cartesian fibration whose vertical maps are
 isomorphisms. Fix $f:x\to y \in B$ and an arbitrary displayed morphism
 $\bar{g}:\bar{x}\to\Sub{f}\bar{y}$. Then $\bar{g}$ is the precomposition of a
-cartesian lift $\bar{f}:\bar{x}\tick\to\Sub{f}\bar{y}$ with a vertical map:</p><center>[Missing image: latex/0578a11267164f9040a107ea72acec7a.svg]</center><p>Because vertical maps are isomorphisms and $\bar{f}$ is cartesian, we can observe
+cartesian lift $\bar{f}:\bar{x}\tick\to\Sub{f}\bar{y}$ with a vertical map:</p><center><img class=latex src=/forest/latex/0578a11267164f9040a107ea72acec7a.svg alt="  \begin{tikzpicture}[diagram]
+    \SpliceDiagramSquare{
+      west/style = lies over,
+      east/style = lies over,
+      north/node/style = upright desc,
+      height = 1.5cm,
+      nw = \bar{x}',
+      ne = \bar{y},
+      sw = x,
+      north = \bar{f},
+      south = f,
+      se = y,
+      nw/style = pullback,
+    }
+    \node (u') [above left = 1.5cm of nw,xshift=-.5cm] {$\bar{x}$};
+    \node (u) [above left = 1.5cm of sw,xshift=-.5cm] {$x$};
+    \draw[lies over] (u') to (u);
+    \draw[->,bend left=30] (u') to node [sloped,above] {$\bar{g}$} (ne);
+    \draw[double] (u) to (sw);
+    \draw[->,exists] (u') to node [desc] {$i$} (nw);
+  \end{tikzpicture}"></center><p>Because vertical maps are isomorphisms and $\bar{f}$ is cartesian, we can observe
 that $\bar{g}$ is cartesian as follows, writing $\bar{m} : \bar{u}\to\Sub{m}
-\bar{x}\tick$ for the unique factorization of $\bar{h}$ through $\bar{f}$ over $m$:</p><center>[Missing image: latex/2c9e72e0671024d417d3f3606c24ef1e.svg]</center></details></div><div id=children-frct-001P></div></details></section></div></details></section></div></details></section><footer class=post-footer><div><section class=backlinks><h4>Parents</h4><nav><ul><li><a class=local href=/forest/notes/frct-003i/>foundations of relative category theory
+\bar{x}\tick$ for the unique factorization of $\bar{h}$ through $\bar{f}$ over $m$:</p><center><img class=latex src=/forest/latex/2c9e72e0671024d417d3f3606c24ef1e.svg alt="  \begin{tikzpicture}[diagram]
+    \SpliceDiagramSquare{
+      west/style = lies over,
+      east/style = lies over,
+      north/node/style = upright desc,
+      height = 1.5cm,
+      nw = \bar{x},
+      ne = \bar{y},
+      sw = x,
+      north = \bar{g},
+      south = f,
+      se = y,
+      nw/style = pullback,
+    }
+    \node (u') [above left = 1.5cm of nw,xshift=-1cm] {$\bar{u}$};
+    \node (u) [above left = 1.5cm of sw,xshift=-1cm] {$u$};
+    \draw[lies over] (u') to (u);
+    \draw[->,bend left=30] (u') to node [sloped,above] {$\bar{h}$} (ne);
+    \draw[->] (u) to node [sloped,below] {$m$} (sw);
+    \draw[->,exists] (u') to node [desc] {$\bar{m};i\Sup{-1}$} (nw);
+  \end{tikzpicture}"></center></details></div><div id=children-frct-001P></div></details></section></div></details></section></div></details></section><footer class=post-footer><div><section class=backlinks><h4>Parents</h4><nav><ul><li><a class=local href=/forest/notes/frct-003i/>foundations of relative category theory
 <span class=slug>#frct-003I</span></a></li></ul></nav></section></div><ul class=post-tags></ul></footer></article></main><footer class=footer><span>&copy; 2022 <a href=https://www.jonmsterling.com/forest/>Mathematical notebooks</a></span>
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
